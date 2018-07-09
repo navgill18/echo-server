@@ -32,8 +32,7 @@ def client(msg, log_buffer=sys.stderr):
         #chunk = ''
         continue_rec = True
         while continue_rec:
-            print("in while loop")
-            chunk = sock.recv(1600)
+            chunk = sock.recv(16)
             print('received "{0}"'.format(chunk.decode('utf8')), file=log_buffer)
             received_message += chunk
             if len(chunk) < 16:
